@@ -1,17 +1,33 @@
 ﻿public class Calculator
 {
-    int Add(int a, int b)
+    public int Add(int a, int b)
     {
         return a + b;
     }
 
-    double Add(double a, double b)
+    public double Add(double a, double b)
     {
-        return a +b;
+        return a + b;
     }
 
-    double Add(double a, double b, int decimals)
+    public double Add(double a, double b, int decimals)
     {
-        return (a + b) ; // wie mach ich das mit deciamls?
+        return Math.Round(a + b, decimals);
     }
+
+    public int Subtract(int a, int b)
+    {
+        return a - b;
+    }
+
+    public double Subtract(double a, double b)
+    {
+        return a - b;
+    }
+
+    public double Subtract(double a, double b, int decimals)
+    {
+        return Math.Round(a - b, decimals);
+    }
+
 }
