@@ -15,4 +15,3 @@ Reversed: 5 4 3 2 1
 
 ## Time Complexity
 O(n) — each element is visited once. O(1) space — swapped in place, no extra array needed.
-git commit -m "docs(interview-prep): add README for array-reverse"
