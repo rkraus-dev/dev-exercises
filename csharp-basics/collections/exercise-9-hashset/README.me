@@ -1,0 +1,35 @@
+# Exercise 9 – HashSet
+Working with unique collections: adding, removing, membership checks, and set operations.
+
+## Task
+Create a HashSet of guild members. Add a new member, attempt to add a duplicate, check membership, remove a member, merge two guilds with UnionWith, and print the results.
+
+## Approach
+Used HashSet<string> to enforce uniqueness. Add returns a boolean indicating success, used directly in output. Contains checks membership. UnionWith merges two sets, automatically ignoring duplicates. Used string.Join for comma-separated output without a trailing comma.
+
+## Example Output
+```
+Guild members:
+Archer
+Mage
+Warrior
+
+Adding Healer... Success: True
+Adding Mage (duplicate)... Success: False
+
+Archer in guild: True
+
+Removing Warrior...
+
+Second Guild members: Paladin, Mage, Ranger
+
+After Union:
+Archer
+Mage
+Healer
+Paladin
+Ranger
+```
+
+## Time Complexity
+O(1) — Add, Remove, Contains are constant time. O(n) for iteration and UnionWith.
