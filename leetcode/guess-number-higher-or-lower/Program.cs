@@ -1,20 +1,42 @@
-﻿var solution = new Solution();
-Console.WriteLine(solution.GuessNumber(10));
-Console.WriteLine(solution.GuessNumber(1));
-Console.WriteLine(solution.GuessNumber(2126753390));
+﻿Console.WriteLine(new Solution(6).GuessNumber(10));
+Console.WriteLine(new Solution(1).GuessNumber(1));
+Console.WriteLine(new Solution(1702766719).GuessNumber(2126753390));
 
 public class Solution : GuessGame
 {
+    public Solution(int pick) : base(pick) { }
     public int GuessNumber(int n)
     {
-        // TODO – dein Ratespiel
-        return 0;
+        int low = 1;
+        int high = n;
+        while (true)
+        {
+            int mid = low + (high - low) / 2;
+            int result = guess(mid);
+            if (result == 0)
+            {
+                return mid;
+            }
+            else if (result == -1)
+            {
+                high = mid - 1;
+            }
+            else
+            {
+                low = mid + 1;
+            }
+        }
     }
 }
 
 public class GuessGame
 {
-    private int pick = 6;
+    private int pick;
+
+    public GuessGame(int pick)
+    {
+        this.pick = pick;
+    }
 
     protected int guess(int num)
     {
